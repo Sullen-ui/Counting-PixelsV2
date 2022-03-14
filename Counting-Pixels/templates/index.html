@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+<title>Upload File</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://bootstraptema.ru/snippets/style/2015/bootswatch/bootstrap-darkly-v3.3.6.css" media="screen">
+<link rel="stylesheet" href="https://bootstraptema.ru/snippets/style/2015/bootswatch/custom.min.css">
+
+</head>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <form method="post" enctype="multipart/form-data" action="/"> 
+        <div class="mb-3">
+          <h3> Загрузить изображение</h3>
+          <input type="file" name="file" class="form-control">
+          <button type="submit" class="btn btn-secondary">Upload</button>
+        </div>
+       
+      </form>
+    </div>
+    <div class="col">
+      <h3> Ваше изображение</h3>
+    <img src="{{path}}" alt="Картинка"  width="250px" height="250px">
+    <br>
+    <p class="text-black">Черные пискели: {{black}}</p> 
+    <p class="text-white">Белые пиксели:  {{white}}</p>
+    <p class="text-white">{{phrase}}</p>
+    </div>
+    <div class="col">
+      <form method="post" action="/hex"> 
+        <h3> Введите HEX-код цвета</h3>
+        <input type="text" name="hex" class="form-control" >
+        <button type="submit" class="btn btn-secondary">Upload</button>
+    </form>
+    <p class="text-white "> Кол-во пикселей: {{ hex }} 
+
+    </p>
+    <p class="text-white "> Для проверки чёрного: #000000
+        
+    </p>
+    </div>
+  </div>
+</div>
+
+
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+<title>Upload File</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<h1> Ваше изображение</h1>
+    <img src="{{path}}" alt="Картинка"  width="250px" height="250px">
+    <br>
+    <p class="text-success">Черные пискели: {{black}}</p> 
+    <p>Белые:  {{white}}</p>
+    
