@@ -7,11 +7,11 @@ import numpy as np
 #Путь для картинок
 UPLOAD_FOLDER = './static/pic'
 
-app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+server = Flask(__name__)
+server.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 ALLOWED_EXTENSIONS = set([ 'png', 'jpg', 'jpeg'])
-app.config['SESSION_TYPE'] = 'memcached'
-app.config['SECRET_KEY'] = 'super secret key'
+server.config['SESSION_TYPE'] = 'memcached'
+server.config['SECRET_KEY'] = 'super secret key'
 
 # Функция проверки расширения файла 
 def allowed_file(filename):
@@ -42,7 +42,7 @@ def countBW(path):
 
 
         
-@app.route('/', methods=['GET', 'POST'])
+@server.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         # проверим, передается ли в запросе файл 
@@ -69,7 +69,7 @@ def upload_file():
     return render_template ("index.html")     
 
     
-@app.route('/hex', methods=['GET', 'POST'])
+@server.route('/hex', methods=['GET', 'POST'])
 # Считаем писели по HEX коду
 def countHex():
         if request.method == 'POST':
