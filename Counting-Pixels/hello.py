@@ -61,7 +61,7 @@ def upload_file():
             # безопасно извлекаем оригинальное имя файла
             filename = file.filename
             # сохраняем файл
-            path=(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            path=(os.path.join(server.config['UPLOAD_FOLDER'], filename))
             file.save(path)
             session['path']= path
             return countBW(path)
