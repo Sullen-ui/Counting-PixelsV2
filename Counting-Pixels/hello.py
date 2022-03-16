@@ -31,7 +31,7 @@ def countBW(path):
             # Заносим переменные в библиотеку сессии для использования в других функциях
             session['white'] = numwhites  
             session['black'] = numblacks 
-            #Сравниваю каких пикселей больше и так-же заношу в библиотеку
+            #Сравниваю каких пикселей больше и так-же заношу в библиотеку?
             result = max(numwhites,numblacks)
             if result == numwhites:
                 phrase = 'Белых пикселей больше'
