@@ -1,6 +1,6 @@
 echo killing old docker processes
-docker-compose rm -fs
+/Counting-pixels/docker-compose rm -fs
 
 echo building docker containers
-docker-compose up --build -d
+/Counting-pixels/docker-compose up --build -d
 
